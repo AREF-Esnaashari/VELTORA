@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-syne: 'Syne', sans-serif;
+}
+
+html {
+  direction: rtl;
+}
+
+.main {
+  background-image: url(/Frame\ 1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
