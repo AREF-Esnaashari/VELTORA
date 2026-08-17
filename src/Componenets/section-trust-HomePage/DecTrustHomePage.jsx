@@ -1,5 +1,4 @@
 import { ArrowLeft, ArrowRight, Zap, MonitorCheck, ShieldCheck } from 'lucide-react';
-import { useEffect } from 'react';
 
 export default function DecTrustHomePage({ setIndexImg, DataTrust, indexImg }) {
   const checklist = [
@@ -7,16 +6,7 @@ export default function DecTrustHomePage({ setIndexImg, DataTrust, indexImg }) {
     { icon: MonitorCheck, text: 'تست عملکرد و صفحه‌نمایش' },
     { icon: ShieldCheck, text: 'تایید نهایی و مهر کیفیت' },
   ];
-  // useEffect(() => {
-  //   let timeinterval = setInterval(() => {
 
-  //       setIndexImg((prev) => (indexImg < DataTrust.length - 1 ? prev + 1 : 0));
-  //   }, 5000);
-
-  //   () => {
-  //     clearInterval(timeinterval);
-  //   };
-  // }, [indexImg, setIndexImg, DataTrust]);
   return (
     <div
       dir="rtl"
