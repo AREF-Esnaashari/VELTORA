@@ -1,5 +1,6 @@
 import MainApp from '../Componenets/main/MainApp';
 import Carts_section1 from '../Componenets/section-Carts-Home/Carts_section1';
+import TrustHomePage from '../Componenets/section-trust-HomePage/TrustHomePage';
 import AppNav from './AppNav';
 
 export default function Home() {
@@ -9,7 +10,8 @@ export default function Home() {
         <AppNav />
         <MainApp />
       </div>
-        <Carts_section1 />
+      <Carts_section1 />
+      <TrustHomePage />
     </>
   );
 }
