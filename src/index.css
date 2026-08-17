@@ -7,6 +7,9 @@
 html {
   direction: rtl;
 }
+body{
+  background-image: url(../public/milad-fakurian-3hIaqX3VuXE-unsplash.jpg);
+}
 
 .main {
   background-image: url(/Frame\ 1.png);
