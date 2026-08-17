@@ -11,7 +11,7 @@ export default function Cart_section1({ data }) {
   const { Icon, color, ring } = iconMap[data.id];
 
   return (
-    <div className="group flex flex-col bg-white items-center gap-4 p-4 sm:p-6 rounded-2xl shadow-lg shadow-black/10 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <div className="group flex flex-col  items-center gap-4 p-4 sm:p-6 rounded-2xl shadow-lg shadow-black/10 border border-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50">
       <img
         src={data.imgCart}
         alt={data.description}
@@ -22,7 +22,7 @@ export default function Cart_section1({ data }) {
         <span
           className={`flex items-center justify-center rounded-full p-1.5 ring-4 ${ring} bg-white`}
         >
-          <Icon className={color} size={18} />
+          <Icon className={color} size={17} />
         </span>
       </div>
     </div>
