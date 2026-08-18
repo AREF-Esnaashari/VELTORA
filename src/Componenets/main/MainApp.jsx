@@ -2,7 +2,12 @@ import { ShieldCheck, Sparkles, ShoppingCart } from 'lucide-react';
 
 export default function MainApp() {
   return (
-    <div className="container flex flex-col items-center justify-center gap-10 mx-auto px-4 text-center">
+    <div
+      className="container flex flex-col items-center justify-center gap-10 mx-auto px-4 text-center"
+      data-aos="fade"
+      data-aos-duration="1500"
+      data-aos-easing="ease-out-cubic"
+    >
       <div>
         <div className="flex items-center justify-center gap-2">
           <Sparkles className="text-amber-500" size={28} />
