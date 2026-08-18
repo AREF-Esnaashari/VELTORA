@@ -18,7 +18,12 @@ export default function TrustHomePage() {
   let [indexImg, setIndexImg] = useState(0);
   console.log(indexImg);
   return (
-    <div className="container h-auto flex flex-col md:flex-col lg:flex-row sm:flex-col sm:space-y-32 lg:space-y-3   mx-auto mt-32 py-20">
+    <div
+      className="container h-auto flex flex-col md:flex-col lg:flex-row sm:flex-col sm:space-y-32 lg:space-y-3   mx-auto mt-32 py-20"
+      data-aos="fade"
+      data-aos-duration="1500"
+      data-aos-easing="ease-out-cubic"
+    >
       <DecTrustHomePage setIndexImg={setIndexImg} DataTrust={DataTrust} indexImg={indexImg} />
       <GalleryTrustHomePage DataTrust={DataTrust} indexImg={indexImg} />
     </div>
