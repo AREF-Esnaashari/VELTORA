@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // استایل‌های ضروری AOS
+import NotFound from './pages/NotFound';
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -14,6 +15,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
