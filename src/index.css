@@ -5,10 +5,9 @@
 }
 
 html {
-
   direction: rtl;
 }
-body{
+body {
   background-image: url(../public/milad-fakurian-3hIaqX3VuXE-unsplash.jpg);
 }
 
@@ -17,5 +16,10 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
+}
+.aboutPage {
+  background: url(./Componenets/section-about-HomePage/assets/imageGalleryAboutHomePage.png);
+  background-size: cover;
+padding: 10px;
+  background-position: center;
 }
