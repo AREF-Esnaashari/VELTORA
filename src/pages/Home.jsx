@@ -1,6 +1,6 @@
 import MainApp from '../Componenets/main/MainApp';
 import Carts_section1 from '../Componenets/section-Carts-Home/Carts_section1';
-import TrustHomePage from '../Componenets/section-trust-HomePage/TrustHomePage';
+// import TrustHomePage from '../Componenets/section-trust-HomePage/TrustHomePage';
 import AppNav from './AppNav';
 import { useEffect } from 'react';
 import Lenis from 'lenis';
@@ -13,6 +13,11 @@ import ProductInto_Homepage from '../Componenets/section-productIntro-Homepage/P
 import About_Homepage from '../Componenets/section-about-HomePage/About_Homepage';
 
 import Footer from '../Componenets/section-footer-HomePage/Footer';
+import ExpertCertificateBanner from '../Componenets/Identity-Home/ExpertCertificateBanner';
+import HowWeWork from '../Componenets/section-trust-HomePage/HowWeWork';
+import GuaranteeSection from '../Componenets/section-about-HomePage/About_Homepage';
+import OurMission_Homepage from '../Componenets/section-ourMission-Homepage/OurMission_Homepage';
+import Footer_Homepage from '../Componenets/section-footer-Homepage v2/Footer_Homepage';
 export default function Home() {
   useEffect(() => {
     // ۱. مقداردهی اولیه Lenis با تنظیمات بسیار نرم
@@ -46,10 +51,14 @@ export default function Home() {
         <MainApp />
       </div>
       <Carts_section1 />
-      <TrustHomePage />
+      <ExpertCertificateBanner />
+      {/* <TrustHomePage /> */}
+      <HowWeWork />
       <ProductInto_Homepage />
-      <About_Homepage />
-      <Footer />
+      <GuaranteeSection />
+      <OurMission_Homepage />
+      {/* <Footer /> */}
+      <Footer_Homepage />
     </>
   );
 }
