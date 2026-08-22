@@ -1,37 +1,49 @@
+import React from 'react';
 import { useSearchParams } from 'react-router';
 
-// const categories = ['همه', 'موبایل', 'لپ‌تاپ', 'لوازم جانبی'];
-
-let categories = [
-  { id: 'all', sortedName: 'همه' },
-  { id: 'mobile', sortedName: 'موبایل' },
-  { id: 'laptop', sortedName: 'لپ‌تاپ' },
-  { id: 'accessories', sortedName: 'لوازم‌ جانبی' },
+const categories = [
+  { id: 'all', label: 'لپ‌تاپ' },
+  { id: 'gaming', label: 'گیمینگ' },
+  { id: 'office', label: 'اداری' },
+  { id: 'engineering', label: 'مهندسی' },
+  { id: 'home', label: 'خانگی' },
+  { id: 'ultrabook', label: 'اولترابوک' },
+  { id: 'lightweight', label: 'وزن سبک' },
 ];
-export default function HomeProductFilters() {
-  let [test, setTest] = useSearchParams();
-  let currentActive = test.get('category') || 'all';
-  function handleActive(id) {
-    setTest({ category: id });
-  }
+
+const HomeProductFilters = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get('category') || 'all';
+
+  const handleCategoryChange = (catId) => {
+    if (catId === 'all') {
+      searchParams.delete('category');
+      setSearchParams(searchParams);
+    } else {
+      setSearchParams({ category: catId });
+    }
+  };
+
   return (
-    <div className="flex  items-center justify-end gap-3 mb-8">
+    <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none mb-6" dir="rtl">
       {categories.map((cat) => {
-        const isActive = cat.id === currentActive;
+        const isActive = activeCategory === cat.id;
         return (
           <button
             key={cat.id}
-            onClick={() => handleActive(cat.id)}
-            className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95 ${
+            onClick={() => handleCategoryChange(cat.id)}
+            className={`px-5 py-4 rounded-xl text-xs font-bold transition-all duration-200 whitespace-nowrap cursor-pointer ${
               isActive
-                ? 'bg-[#EF9F27] hover:bg-[#f0a83b] text-black font-semibold shadow-lg shadow-[#EF9F27]/20 hover:shadow-[#EF9F27]/40'
-                : 'bg-[#373737] text-gray-300 hover:bg-[#494949] hover:text-white'
+                ? 'bg-amber-500 text-neutral-950 shadow-lg shadow-amber-500/10'
+                : 'bg-neutral-900 text-neutral-400 border border-neutral-800/80 hover:text-white hover:border-neutral-700'
             }`}
           >
-            {cat.sortedName}
+            {cat.label}
           </button>
         );
       })}
     </div>
   );
-}
+};
+
+export default HomeProductFilters;

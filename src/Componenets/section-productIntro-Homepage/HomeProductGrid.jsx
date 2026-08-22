@@ -1,30 +1,25 @@
-import { useParams, useSearchParams } from 'react-router';
+import React from 'react';
 import HomeProductCard from './HomeProductCard';
 
-export default function HomeProductGrid() {
-  let [search] = useSearchParams();
-  let current = search.get('category');
-  console.log(current);
-  const mockProducts = [
-    { id: 1, title: 'آیفون 16 پرو', price: '7.900.000', badge: 'در حد نو', category: 'mobile' },
-    { id: 2, title: 'لپتاپ دل', price: '7.900.000', badge: 'استوک', category: 'laptop' },
-    { id: 3, title: 'اپل واچ', price: '7.900.000', badge: 'نو', category: 'accessories' },
-    { id: 4, title: 'آیفون 16 پرو', price: '7.900.000', badge: 'نو', category: 'mobile' },
-  ];
-  // const filteredProducts = mockProducts.filter((item) =>
-  //   current === 'all' || !current ? true : item.category === current
-  // );
-  let filtered = mockProducts.filter((item) =>
-    // current === null ? item.category === current : (current = 'all')
-    current === 'all' || !current ? true : item.category === current
-  );
-  console.log(filtered);
+const HomeProductGrid = ({ products }) => {
+
+  if (!products || products.length === 0) {
+    return (
+      <div className="w-full py-12 flex justify-center items-center">
+          <h1 className="text-amber-300 font-bold text-center text-lg">
+          داریم رو بهترینش تمرکز میکنیم
+        </h1>
+      </div>
+    );
+  }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {filtered.map((item) => (
-        <HomeProductCard key={item.id} product={item} />
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      {products.map((product) => (
+        <HomeProductCard key={product.id} product={product} />
       ))}
     </div>
   );
-}
+};
+
+export default HomeProductGrid;
