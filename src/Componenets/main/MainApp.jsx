@@ -1,5 +1,5 @@
 import { ShieldCheck, Sparkles, ShoppingCart } from 'lucide-react';
-
+import { Link } from 'react-router';
 export default function MainApp() {
   return (
     <div
@@ -11,8 +11,8 @@ export default function MainApp() {
       <div>
         <div className="flex items-center justify-center gap-2">
           <Sparkles className="text-amber-500" size={28} />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white/80 font-extrabold leading-tight">
-            اولین مرجع خرید تمام لوازم استوک
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white/80 font-bold leading-tight">
+            مرجع کارشناسی و فروش لپ‌تاپ های استوک
           </h1>
         </div>
         <div className="flex items-center justify-center gap-2">
@@ -24,7 +24,7 @@ export default function MainApp() {
       </div>
       <button className="mt-2 px-6 py-3 rounded-md bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700 active:scale-95 transition-all duration-200 cursor-pointer flex items-center gap-2">
         <ShoppingCart size={20} />
-        همین الان خرید کن !
+        <Link to="/commingsoon">همین الان خرید کن !</Link>
       </button>
     </div>
   );
