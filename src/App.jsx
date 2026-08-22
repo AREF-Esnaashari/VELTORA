@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // استایل‌های ضروری AOS
 import NotFound from './pages/NotFound';
+import ComingSoon from './pages/ComingSoon';
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/commingsoon" element={<ComingSoon />} />
       </Routes>
     </BrowserRouter>
   );
