@@ -5,6 +5,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // استایل‌های ضروری AOS
 import NotFound from './pages/NotFound';
 import ComingSoon from './pages/ComingSoon';
+import ProductsPage from './pages/ProductsPage';
+import { ProviderContext } from './Componenets/Context/ContextProductApi';
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -14,11 +16,15 @@ export default function App() {
   }, []);
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/commingsoon" element={<ComingSoon />} />
-      </Routes>
+      <ProviderContext>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/Products" element={<ProductsPage />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/commingsoon" element={<ComingSoon />} />
+        </Routes>
+      </ProviderContext>
     </BrowserRouter>
   );
 }
