@@ -1,35 +1,27 @@
-
+import AppNav from './AppNav';
+import Footer_Homepage from '../Componenets/HOME PAGE/section-footer-Homepage v2/Footer_Homepage';
 import ProductsHeader from '../Componenets/PRODUCTS PAGE/ProductsHeader';
 import CategoryFilter from '../Componenets/PRODUCTS PAGE/CategoryFilter';
 import ProductGrid from '../Componenets/PRODUCTS PAGE/ProductGrid';
-import AppNav from './AppNav';
 
 export default function ProductsPage() {
-
-  // let [searchParams, setSearchParams] = useSearchParams();
-
-  // const activeCategory = searchParams.get('categ');
-
-  // const { products, isLoading, error } = useProducts(activeCategory);
-  // function handleCategoryChange(categ) {
-  //   if (categ) {
-  //     setSearchParams({ categ });
-  //   } else {
-  //     setSearchParams({});
-  //   }
-  // }
-
   return (
-    <main dir="rtl" className="min-h-screen  px-4 container mt-0 mx-auto  pb-12 sm:px-8">
-      <div className="w-full  items-center  flex flex-col ">
+    <main dir="rtl" className="relative min-h-screen overflow-x-clip pb-16">
+      {/* نورهای محیطی (Glow) پس‌زمینه */}
+      <div className="pointer-events-none absolute -top-40 right-[15%] h-[28rem] w-[28rem] rounded-full bg-[#EF9F27]/15 blur-[130px]" />
+      <div className="pointer-events-none absolute top-[35%] -left-32 h-96 w-96 rounded-full bg-orange-700/10 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-0 right-[30%] h-72 w-72 rounded-full bg-amber-500/10 blur-[100px]" />
+
+      <div className="relative z-10">
         <AppNav />
-      </div>
-      <div className="mx-auto max-w-6xl space-y-10">
-        <ProductsHeader />
 
-        <CategoryFilter />
+        <div className="container mx-auto max-w-7xl space-y-12 px-4 pt-6 sm:px-8">
+          <ProductsHeader />
+          <CategoryFilter />
+          <ProductGrid />
+        </div>
 
-        <ProductGrid />
+        <Footer_Homepage />
       </div>
     </main>
   );
