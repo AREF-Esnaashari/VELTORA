@@ -4,7 +4,7 @@ import ProductCardSkeleton from './ProductCardSkeleton';
 
 export default function ProductGrid() {
   let { error, isLoading, products } = useProductsContext();
-console.log(products)
+
   if (error) {
     return (
       <div className="flex flex-col items-center gap-4 rounded-3xl border border-red-500/20 bg-red-500/5 py-16 text-center backdrop-blur-md">

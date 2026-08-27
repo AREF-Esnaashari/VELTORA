@@ -9,7 +9,7 @@ export default function ProductsHeader() {
 
       <div className="flex items-center justify-center gap-4 sm:gap-6">
         <span className="h-px w-16 bg-gradient-to-l from-transparent to-[#EF9F27] sm:w-32" />
-        <h1 className="bg-gradient-to-l from-white via-white to-[#EF9F27] bg-clip-text text-4xl font-extrabold whitespace-nowrap text-transparent drop-shadow-lg sm:text-6xl">
+        <h1 className="bg-gradient-to-l from-white via-white to-[#EF9F27] bg-clip-text text-4xl  whitespace-nowrap text-transparent p-3 drop-shadow-lg sm:text-6xl text-2xl text-center font-vazir font-bold uppercase">
           محصولات ما
         </h1>
         <span className="h-px w-16 bg-gradient-to-r from-transparent to-[#EF9F27] sm:w-32" />
