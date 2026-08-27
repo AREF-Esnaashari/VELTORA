@@ -23,7 +23,7 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink>درباره ما</NavLink>
+          <NavLink to="/About">درباره ما</NavLink>
         </li>
         <li>
           <NavLink>راه های ارتباطی</NavLink>
