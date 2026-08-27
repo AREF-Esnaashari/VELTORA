@@ -1,89 +1,58 @@
 import { useState } from 'react';
-import ProductBadge from './ProductBadge';
-
+// import ProductBadge from '../HOME PAGE/section-productIntro-Homepage/';
+import { ShoppingBag, Laptop } from 'lucide-react';
 // این کامپوننت یک آبجکت product رو می‌گیره و کارت رو رندر می‌کنه
 // شکل مورد انتظار product (از API):
 // { id, title, price, image, status }
 export default function ProductCard({ product, onAddToCart }) {
-
-  const { title, price, image, status } = product;
-  const [liked, setLiked] = useState(false);
+  console.log(product)
+  // const { title, price, image, status } = product;
+  // const [liked, setLiked] = useState(false);
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-3 shadow-lg shadow-black/30 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#EF9F27]/40 hover:bg-white/[0.07] hover:shadow-[0_25px_60px_-15px_rgba(239,159,39,0.3)]">
-      {/* تصویر محصول */}
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-neutral-800/60">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-        <ProductBadge status={status} />
-
-        {/* دکمه علاقه‌مندی */}
-        <button
-          onClick={() => setLiked((v) => !v)}
-          aria-label="افزودن به علاقه‌مندی‌ها"
-          className={`absolute top-3 right-3 z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border backdrop-blur-md transition-all duration-300 ${
-            liked
-              ? 'scale-110 border-red-400/40 bg-red-500/20 text-red-400 shadow-[0_0_15px_-2px_rgba(248,113,113,0.6)]'
-              : 'border-white/15 bg-black/30 text-white/70 opacity-0 group-hover:opacity-100 hover:scale-110 hover:text-red-400'
-          }`}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill={liked ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-          </svg>
-        </button>
-
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            loading="lazy"
-          />
-        ) : (
-          // در نبود عکس، آیکون placeholder نمایش داده میشه
-          <div className="flex h-full w-full items-center justify-center text-neutral-600 transition-colors duration-500 group-hover:text-[#EF9F27]/50">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25">
-              <rect x="7" y="2" width="10" height="20" rx="2" />
-              <line x1="11" y1="18" x2="13" y2="18" />
-            </svg>
-          </div>
-        )}
-      </div>
-
-      {/* اطلاعات محصول */}
-      <div className="flex grow flex-col px-1 pt-4">
-        <h3 className="text-sm font-bold text-white transition-colors duration-300 group-hover:text-[#EF9F27]">
-          {title}
-        </h3>
-
-        <div className="mt-auto flex items-end justify-between pt-3 pb-4">
-          <span className="text-[11px] text-neutral-500">قیمت</span>
-          <p className="flex items-baseline gap-1.5 text-sm text-neutral-400">
-            <span className="bg-gradient-to-l from-[#EF9F27] to-[#f7b955] bg-clip-text text-base font-extrabold text-transparent sm:text-lg">
-              {price?.toLocaleString('fa-IR')}
+    <div
+      className="bg-neutral-900/90 border border-neutral-800 hover:border-amber-500/40 rounded-2xl p-4 flex flex-col justify-between gap-4 transition-all duration-300 group hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50"
+      dir="rtl"
+    >
+      {/* بخش بالای کارت: آیکون، بج‌ها و نمره کارشناسی */}
+      <div className="flex flex-col gap-3">
+        <div className="relative w-full h-44 rounded-xl bg-neutral-950 border border-neutral-800/50 flex flex-col items-center justify-center text-neutral-600 group-hover:text-amber-500 transition-colors">
+          {/* بج وضعیت */}
+          {product.badge && (
+            <span className="absolute top-2 right-2 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 backdrop-blur-md">
+              {product.badge}
             </span>
-            تومان
-          </p>
+          )}
+
+          {/* آیکون به جای عکس سیاه */}
+          <Laptop className="w-16 h-16 stroke-[1.25] group-hover:scale-110 transition-transform duration-300" />
         </div>
 
-        <button
-          onClick={() => onAddToCart?.(product)}
-          className="group/btn relative mt-auto flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl border border-[#EF9F27]/25 bg-[#EF9F27]/10 py-2.5 text-sm font-bold text-[#EF9F27] transition-all duration-300 hover:border-transparent hover:bg-gradient-to-l hover:from-[#EF9F27] hover:to-[#f7b955] hover:text-[#141414] hover:shadow-[0_10px_30px_-10px_rgba(239,159,39,0.7)] active:scale-95"
-        >
-          افزودن به سبد خرید
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="transition-transform duration-300 group-hover/btn:-rotate-12"
-          >
-            <circle cx="9" cy="21" r="1" />
-            <circle cx="20" cy="21" r="1" />
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-          </svg>
+        {/* بج نمره کارشناسی */}
+        <div className="w-full py-1.5 px-3 rounded-lg bg-emerald-950/40 border border-emerald-800/50 text-emerald-400 text-xs font-bold flex items-center justify-between">
+          <span>کارشناسی شده:</span>
+          <span className="text-emerald-300 font-extrabold">{product.score} / 10</span>
+        </div>
+
+        {/* عنوان محصول */}
+        <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-1">
+          {product.title}
+        </h3>
+      </div>
+
+      {/* بخش پایین کارت: قیمت و دکمه خرید */}
+      <div className="flex flex-col gap-3 border-t border-neutral-800/60 pt-3">
+        <div className="flex items-center justify-between text-xs">
+          <span className="text-neutral-500 font-medium">قیمت:</span>
+          <div className="flex items-center gap-1 font-extrabold text-white text-sm">
+            <span>{product.price}</span>
+            <span className="text-[10px] text-neutral-400 font-normal">تومان</span>
+          </div>
+        </div>
+
+        <button className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer">
+          <ShoppingBag className="w-4 h-4 stroke-[2.2]" />
+          <span>اضافه به سبد خرید</span>
         </button>
       </div>
     </div>
