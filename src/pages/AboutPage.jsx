@@ -8,7 +8,7 @@ import Footer from '../Componenets/HOME PAGE/section-footer-HomePage/Footer';
 export default function AboutPage() {
   return (
     <main className=" min-h-screen mt-0 mx-auto container">
-      {/* هدر و ناوبری سراسری پروژه از قبل باید بالای این صفحه رندر شود */}
+    
       <AppNav />
       <hr />
       <AboutHero />
