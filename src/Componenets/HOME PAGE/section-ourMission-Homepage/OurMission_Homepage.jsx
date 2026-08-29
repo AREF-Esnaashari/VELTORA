@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router';
 import { Target, ArrowLeft } from 'lucide-react';
 
