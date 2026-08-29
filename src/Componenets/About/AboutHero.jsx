@@ -4,7 +4,7 @@ import CurvedIcon from './CurvedIcon';
 export default function AboutHero() {
   return (
     <section className=" container px-6 md:px-16 pt-16 overflow-hidden">
-      {/* خط‌های دکوراتیو مورب پس‌زمینه */}
+   
       <div className="pointer-events-none absolute inset-0 opacity-40 bg-[linear-gradient(135deg,transparent_45%,#1f1f1f_46%,#1f1f1f_48%,transparent_49%)]" />
 
       <div className="relative max-w-3xl mr-0 ml-auto text-right">
