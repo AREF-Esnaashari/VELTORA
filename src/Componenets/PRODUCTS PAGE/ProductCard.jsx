@@ -1,11 +1,11 @@
-import { useState } from 'react';
+
 // import ProductBadge from '../HOME PAGE/section-productIntro-Homepage/';
 import { ShoppingBag, Laptop } from 'lucide-react';
 // این کامپوننت یک آبجکت product رو می‌گیره و کارت رو رندر می‌کنه
 // شکل مورد انتظار product (از API):
 // { id, title, price, image, status }
 export default function ProductCard({ product, onAddToCart }) {
-  console.log(product)
+
   // const { title, price, image, status } = product;
   // const [liked, setLiked] = useState(false);
 

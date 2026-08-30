@@ -44,13 +44,12 @@ export default function ProductGrid() {
 
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-      {products.map((product, i) => (
+      {products.map((product) => (
         <div
           key={product.id}
           data-aos="fade-up"
           data-aos-duration="700"
-          data-aos-delay={`${Math.min(i * 70, 560)}`}
-          data-aos-easing="ease-out-cubic"
+  
           className="h-full"
         >
           <ProductCard product={product} />

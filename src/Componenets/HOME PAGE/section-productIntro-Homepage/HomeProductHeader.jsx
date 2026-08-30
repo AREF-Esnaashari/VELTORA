@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router';
 
@@ -13,7 +13,7 @@ const HomeProductHeader = () => {
       </div>
 
       <button className="self-start md:self-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white text-xs font-medium transition-all duration-200 cursor-pointer">
-        <Link to="/commingsoon">مشاهده همه</Link>
+        <Link to="/products">مشاهده همه</Link>
         <ArrowLeft className="w-3.5 h-3.5" />
       </button>
     </div>
