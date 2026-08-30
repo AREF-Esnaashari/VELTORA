@@ -8,21 +8,25 @@ import ComingSoon from './pages/ComingSoon';
 import ProductsPage from './pages/ProductsPage';
 import { ProviderContext } from './Componenets/Context/ContextProductApi';
 import AboutPage from './pages/AboutPage';
+import ScrollRest from './ScrollRest';
+import ContactPage from './pages/ContactPage';
 export default function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true, 
+      once: true,
     });
   }, []);
   return (
     <BrowserRouter>
       <ProviderContext>
+        <ScrollRest />
         <Routes>
           <Route path="/" element={<Home />} />
 
           <Route path="/Products" element={<ProductsPage />} />
           <Route path="/About" element={<AboutPage />} />
+          <Route path="/ContactUs" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/commingsoon" element={<ComingSoon />} />
         </Routes>
