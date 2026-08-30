@@ -24,7 +24,7 @@ export default function MainApp() {
       </div>
       <button className="mt-2 px-6 py-3 rounded-md bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700 active:scale-95 transition-all duration-200 cursor-pointer flex items-center gap-2">
         <ShoppingCart size={20} />
-        <Link to="/commingsoon">همین الان خرید کن !</Link>
+        <Link to="/Products">همین الان خرید کن !</Link>
       </button>
     </div>
   );
