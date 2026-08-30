@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// TODO: این آدرس رو با آدرس واقعی Worker جایگزین کن
-// مثال: https://veltora-api.its-esi2009.workers.dev/products
+
 const API_BASE_URL = 'https://my-food-api.its-esi2009.workers.dev';
 
 export function useProducts(category) {
