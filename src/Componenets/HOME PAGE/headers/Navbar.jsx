@@ -13,20 +13,18 @@ export default function Navbar() {
           <NavLink to="/">خانه</NavLink>
         </li>
         <li>
-          <NavLink to="/Products" replace>
-            محصولات
-          </NavLink>
+          <NavLink to="/Products">محصولات</NavLink>
         </li>
         <li>
-          <NavLink>
+
             <Logo />
-          </NavLink>
+
         </li>
         <li>
           <NavLink to="/About">درباره ما</NavLink>
         </li>
         <li>
-          <NavLink>راه های ارتباطی</NavLink>
+          <NavLink to="/ContactUs">راه های ارتباطی</NavLink>
         </li>
       </ul>
     </nav>
