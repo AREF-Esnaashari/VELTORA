@@ -14,13 +14,24 @@ export default function ProductGridGraphic({ className = '' }) {
         }}
       >
         <div style={{ gridArea: 'orange' }} className="bg-[#EF9F27]">
-          <img src="" alt="" />
+          <img src="./s.png" className="h-full w-full" alt="" />
         </div>
-        <div style={{ gridArea: 'cyan' }} className="bg-[#1FC8E3]" />
-        <div style={{ gridArea: 'magenta' }} className="bg-[#C817E8]" />
-        <div style={{ gridArea: 'crimson' }} className="bg-[#E8174B]" />
-        <div style={{ gridArea: 'blue' }} className="bg-[#2440D6]" />
-        <div style={{ gridArea: 'green' }} className="bg-[#3DCB1E]" />
+        <div style={{ gridArea: 'cyan' }} className="bg-[#1FC8E3]">
+          {' '}
+          <img src="./s.png" className="h-full w-full" alt="" />
+        </div>
+        <div style={{ gridArea: 'magenta' }} className="bg-[#C817E8]">
+          <img src="./s.png" className="h-full w-full" alt="" />
+        </div>
+        <div style={{ gridArea: 'crimson' }} className="bg-[#E8174B]">
+          <img src="./s.png" className="h-full w-full" alt="" />
+        </div>
+        <div style={{ gridArea: 'blue' }} className="bg-[#2440D6]">
+          <img src="./s.png" className="h-full w-full" alt="" />
+        </div>
+        <div style={{ gridArea: 'green' }} className="bg-[#3DCB1E]">
+          <img src="./s.png" className="h-full w-full" alt="" />
+        </div>
       </div>
     </div>
   );
