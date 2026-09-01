@@ -25,8 +25,13 @@ export default function ContactSection() {
   return (
     <section dir="rtl" className="container mt-0 mx-auto px-6 md:px-16 py-20">
       {/* Frame 124 */}
-      <div className="cursor-pointer flex justify-center items-center  bg-[#EF9F27] text-[#fafafa] text-xl  px-12 py-5 rounded-full mb-10">
-        <h1 className="">منتظر پیام شما هستیم</h1>
+
+      <div className="w-full flex justify-center gap-3 items-center mb-12">
+        <div className="w-[150px] hover:shadow-amber-500 rounded-full h-0.5 bg-gradient-to-l from-black to-yellow-500"></div>
+        <h1  className="border-amber-600 border-1 bg-[#ffea0009] p-4 rounded-full text-white cursor-pointer hover:scale-95  duration-200 font-bold">
+          منتظر پیام شما هستیم
+        </h1>
+        <div className="w-[150px]  rounded-full h-0.5 bg-gradient-to-r from-black to-yellow-500"></div>
       </div>
 
       <div className="flex flex-col md:flex-row-reverse gap-8">
